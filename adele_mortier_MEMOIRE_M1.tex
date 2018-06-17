@@ -1,5 +1,9 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{frbib}
+\usepackage{french}
+
 \usepackage{xfrac}
 \usepackage{algorithm}
 \usepackage[noend]{algpseudocode}
@@ -509,8 +513,6 @@
 		\subsection{Poésie cybernétique}
 			L'envie de construire une machine à son image n'épargne pas l'écrivain. Dans cette section un peu spéciale, nous étudierons quelques cas historique de mariage entre cybernétique et littérature générative. Nous aborderons rapidement un automate de Jaquet-Droz qu'il faudrait voir comme un point de départ, puis nous nous pencherons sur les cas plus spécifiques de Calliope et de l'ORLANoïde.
 			
-			
-						vian mythe du robot poète
 			\subsubsection{L'automate écrivain de Jaquet-Droz}
 				L'automate baptisé \textit{l'écrivain} fait partie des nombreux automates réalisés par Pierre Jaquet-Droz (mais aussi son fils et Jean-Frédéric Leschot) entre 1767 et 1774. \textit{L'écrivain} appartient plus précisément à une série de quatre automates, les trois autres étant \textit{la musicienne}, \textit{le dessinateur} et \textit{la grotte} (désormais perdue). Ces automates (excepté \textit{la grotte}) sont conservés au Musée d'Art et d'Histoire de Neuchâtel en Suisse, et sont toujours fonctionnels.\\
 				
@@ -525,36 +527,44 @@
 				\end{figure}
 				Nous verrons que l'exemple suivant -- celui du robot Calliope -- présente la tendance inverse~: peu d'importance accordée à la mécanique et à l'aspect anthropomorphe, mais en revanche une grande attention portée au programme de génération de texte.
 			\subsubsection{Le robot Calliope d'Albert Ducrocq et Louis Couffignal}
-				Le ``projet Calliope'' est bien plus qu'un simple algorithme, puisque Calliope est une machine communicante. Prénommée d'après la Muse de la poésie épique et de l'éloquence par ses créateurs Albert Ducrocq (cybernéticien, journaliste et essayiste) et Louis Couffignal (mathématicien et cybernéticien), Calliope était capable de ``créer'' des poèmes et de les transmettre au spectateur/auditeur. Nous nous appuierons dans cette partie sur les commentaires de Philippe Bootz \cite{bootz}.\\
-				
-				Du côté de l'algorithme, Calliope génère des énoncés relativement primaires, sous la forme d'un triplet sujet-prédicat-objet. Le modèle, selon Philippe Bootz, est proche des premiers modèles utilisés par Jean-Pierre Balpe (dont nous parlerons plus amplement en Section \ref{balpe}) dans les années 80.\\
-				Du côté matériel, le message est transmis à l'aide de flash lumineux binaires (rouges pour $1$ ou verts pour $0$). Un poème de Calliope est donc, en pratique, une chaîne de bits. Les prédicat est séparé du sujet par une chaîne de 2 ou 3 bits initialisés à 0 (soit 2 ou 3 flashs verts selon le contexte). Chaque mot est une séquence de bits de longueur arbitraire, dont la taille varie avec le degré de précision du mot. En effet, les mots du lexique de Calliope sont alignés sur un arbre binaire, et sont par conséquents organisés selon une taxonomie sémique~:\footnote{il est intéressant de voir que ce genre d'organisation est toujours d'actualités dans nos lexiques actuels ! L'exemple le plus connu pour la langue française est sans doute le projet WOLF (Wordnet libre du français), qui regroupe un très grand nombre de léxèmes du français selon une arborescence (non binaire), chaque sous arbre étant appelé \textit{synset} (pour ``ensemble de synonymes'').}.
-				\begin{itemize}
-					\item Les sujets et les objets (les ``êtres'') sont des substantifs, mais leur sémantique inclut dans certain cas la sémantique de modifieurs potentiels (adjectifs, qualificatifs, articles).
-					\item Les prédicats (ou ``instructions'') sont des verbes où des adverbes.
-				\end{itemize} 
-				Compte tenu de la diversité des mots possibles et des contraintes de désambiguïsation\footnote{chaque mot commence par un radical de 4 bits, les êtres commencent par un 1 et les instructions par un 0...}, la longueur moyenne d'un phrase de Calliope est située autour de 65 bits. Le processus de décodage est donc relativement fastidieux, et fait partie intégrante de l'expérience. Les erreurs de lecture sont probables~: comme le précise Philippe Bootz, le choix du moment de l'arrêt de la machine influence le \textit{parsing} (segmentation) du code binaire, et peut donc modifier les mots décodés. De plus, la sémantique du message décodé -- un message souvent très sommaire, très sibyllin -- demeure à l'appréciation de l'expérimentateur. C'est donc bien lui qui élabore encore en grande partie le contenu poétique du message de Calliope.
-				\begin{citationbox}
-					\textit{Autrement dit, contrairement à
-					un texte généré, la qualité textuelle, au regard de règles d'appréciation d'un texte
-					imprimé du genre poème surréaliste, dépend plus du ``traducteur'' que de
-					Calliope. On est finalement assez loin du robot poète}
-				\begin{flushright}
-					Philippe Bootz, \textit{Un historique de la génération numérique de textes} \cite{bootz}
-				\end{flushright}
-				\end{citationbox}
-			
-				
-				
-				polémique autour de Calliope
-				André Parinaud, rédacteur de la revue Arts s'inquiète du ``robot-
-				poète'' d'Albert Ducrocq. Boris Vian lui répond par une nouvelle 24~:
-				Il nous suffit de lire en un journal du matin que M. Albert Ducrocq a
-				construit un robot-poète pour vous étonner aussitôt. Pourtant, qu'est-ce que
-				ça a d'extraordinaire~? Au siècle dernier il y avait déjà Victor Hugo.
-				Alors~? 25
-				
-		
+				\subsubsubsection{Mode de fonctionnement de Calliope}
+					Le ``projet Calliope'' est bien plus qu'un simple algorithme, puisque Calliope est une machine communicante. Prénommée d'après la Muse de la poésie épique et de l'éloquence par ses créateurs Albert Ducrocq (cybernéticien, journaliste et essayiste) et Louis Couffignal (mathématicien et cybernéticien), Calliope était capable de ``créer'' des poèmes et de les transmettre au spectateur/auditeur. Nous nous appuierons dans cette partie sur les commentaires de Philippe Bootz \cite{bootz}.\\
+					
+					Du côté de l'algorithme, Calliope génère des énoncés relativement primaires, sous la forme d'un triplet sujet-prédicat-objet. Le modèle, selon Philippe Bootz, est proche des premiers modèles utilisés par Jean-Pierre Balpe (dont nous parlerons plus amplement en Section \ref{balpe}) dans les années 80.\\
+					Du côté matériel, le message est transmis à l'aide de flash lumineux binaires (rouges pour $1$ ou verts pour $0$). Un poème de Calliope est donc, en pratique, une chaîne de bits. Les prédicat est séparé du sujet par une chaîne de 2 ou 3 bits initialisés à 0 (soit 2 ou 3 flashs verts selon le contexte). Chaque mot est une séquence de bits de longueur arbitraire, dont la taille varie avec le degré de précision du mot. En effet, les mots du lexique de Calliope sont alignés sur un arbre binaire, et sont par conséquents organisés selon une taxonomie sémique~:\footnote{il est intéressant de voir que ce genre d'organisation est toujours d'actualités dans nos lexiques actuels ! L'exemple le plus connu pour la langue française est sans doute le projet WOLF (Wordnet libre du français), qui regroupe un très grand nombre de léxèmes du français selon une arborescence (non binaire), chaque sous arbre étant appelé \textit{synset} (pour ``ensemble de synonymes'').}.
+					\begin{itemize}
+						\item Les sujets et les objets (les ``êtres'') sont des substantifs, mais leur sémantique inclut dans certain cas la sémantique de modifieurs potentiels (adjectifs, qualificatifs, articles).
+						\item Les prédicats (ou ``instructions'') sont des verbes où des adverbes.
+					\end{itemize} 
+					Compte tenu de la diversité des mots possibles et des contraintes de désambiguïsation\footnote{chaque mot commence par un radical de 4 bits, les êtres commencent par un 1 et les instructions par un 0...}, la longueur moyenne d'un phrase de Calliope est située autour de 65 bits. Le processus de décodage est donc relativement fastidieux, et fait partie intégrante de l'expérience. Les erreurs de lecture sont probables~: comme le précise Philippe Bootz, le choix du moment de l'arrêt de la machine influence le \textit{parsing} (segmentation) du code binaire, et peut donc modifier les mots décodés. De plus, la sémantique du message décodé -- un message souvent très sommaire, très sibyllin -- demeure à l'appréciation de l'expérimentateur. C'est donc bien lui qui élabore encore en grande partie le contenu poétique du message de Calliope.
+					\begin{citationbox}
+						\textit{Autrement dit, contrairement à
+						un texte généré, la qualité textuelle, au regard de règles d'appréciation d'un texte
+						imprimé du genre poème surréaliste, dépend plus du ``traducteur'' que de
+						Calliope. On est finalement assez loin du robot poète}
+					\begin{flushright}
+						Philippe Bootz, \textit{Un historique de la génération numérique de textes} \cite{bootz}
+					\end{flushright}
+					\end{citationbox}
+				\subsubsubsection{Polémiques autour de Calliope}
+					Le robot Calliope a provoqué des remous en France, où l'on s'inquiétait de voir la machine supplanter l'humain. Cela a sans doute été accentué par le fait que Calliope, contrairement aux \textit{Love Letters} ou aux \textit{Textes Stochastiques} produits à la même époque, était quelque chose d'``incarné'', de tangible. En particulier, Philippe Bootz dans \cite{bootz} rapporte qu'André Parinaud, rédacteur de la revue \textit{Arts} s'inquiétait du ``robot-poète'' d'Albert Ducrocq. Cette inquiétude s'est soldée par une réponse caustique de Boris Vian, qui dans une longue lettre à André Parinaud en a profité pour plaisanter sur Victor Hugo en ces termes~:
+					\begin{citationbox}
+						\textit{Voilà, mon Parinaud, les dangers de la demi-culture; car il il vous suffit de voir en un journal du matin que monsieur Albert Ducrocq a construit un robot-poète pour vous étonner aussitôt. Pourtant, qu'est-ce que ça a d'extraordinaire puisqu'on connaît Victor Hugo depuis longtemps~? [...] Il y a maintenant des tas d'appareils qui choisissent divers trucs parmi divers autres trucs possibles et manifestent de la sorte une espèce de caractère.}
+						\begin{flushright}
+							Boris Vian, \textit{``Un robot-poète ne nous fait pas peur'', Lettre à André Parinaud}, avril 1953  \cite{vian1953}
+						\end{flushright}
+					\end{citationbox}
+					
+					La seconde ``polémique''\footnote{le terme est peut-être un peu fort pour cet exemple...} liée à Calliope a été provoquée par une expérience de Louis Couffignal, qui s'était chargé modifier la Calliope originelle pour en faire un programme capable d'écrire de véritables poèmes à l'aide d'un lexique littéraire de $300$ mots et de règles de grammaire adaptées\footnote{la composante robotique de Calliope a donc été abandonnée dans le cadre de ce test}. Le test de Couffignal, mentionné par Philippe Bootz, ressemble à un test de Turing (cf. Section \ref{test_turing}). Il s'agissait de présenter à un jury des vers de Calliope et des vers de Paul Eluard, et de poser deux questions~:
+					\begin{itemize}
+						\item quels sont les vers les plus poétiques ?
+						\item  quels sont les vers les plus robotiques ?
+					\end{itemize}
+					Le test a notamment été mené en 1965 lors des rencontres internationales de Genève. Les vers de Calliope présentés à cette occasion, qui commençaient par ``\textit{Un doute agréable couleur de lotus endormi [...]''}, sont restés assez célèbres. Cela dit, ces vers ont été choisis pour leur style, leur ``littérarité'' par Louis Couffignal lui-même, parmi près de $150$ productions. On peut donc penser que ces vers n'étaient pas très représentatifs des capacités réelles de Calliope, qui devaient être en moyenne plus basses. De plus, comme on l'a dit plus haut, le vocabulaire de Calliope, restreint mais sélectionné sur le volet, favorisait grandement la production de syntagmes ``poétiques''. L'auteur, s'il n'agissait pas en sortie du système, imposait tout de même sa marque d'une façon non négligeable \textit{en entrée}.\\
+					
+					Lors des rencontres de Genève, Calliope et Eluard sont arrivés à peu près \textit{ex aequo} en ce qui concerne le caractère poétique; et environ 6 personnes sur 10 ont réussis à ``démasquer'' Calliope. On peut donc en déduire qu'un sous ensemble non négligeable du jury à considéré les vers de Calliope comme plus poétiques en \textit{sachant} qu'ils s'agissait des vers d'un robot.
+					
+					La robotique et la génération de texte semblaient donc être dans les années cinquante des domaines clivants, avec leur adeptes, leurs détracteurs, mais aussi beaucoup de simples observateurs, curieux des évolutions futures de tes systèmes.\\
 			\subsubsection{L'ORLANoïde}
 				L'ORLANoïde est un androïde -- ou plutôt une gynoïde -- que nous avons eu l'occasion de ``rencontrer'' durant l'exposition \textit{Artistes et Robots} au Grand Palais \cite{artistes_robots}, exposition pour laquelle l'ORLANoïde avait été spécialement conçue. Comme Calliope, l'ORLANoïde est une œuvre collaborative, qui a réuni une plasticienne ``tech'', ORLAN, et un poète-programmeur, Jean-Pierre Balpe (l'ensemble de la section suivante lui sera aussi consacré). Cette œuvre, en plus d'interroger le statut du langage, aborde le thème du corps et du double.\\
 				
@@ -1112,11 +1122,29 @@
 					\end{itemize}
 					L'``inventivité'' du système au moment de la génération est paramétrée par une variable appelée \textit{diversity}. Cette ``diversité'' ajoute en fait du bruit au moment du choix du caractère suivant. Plus la diversité est grande, plus le réseau de neurones sera susceptible de générer un caractère ``moins probable'' selon ses propres calculs. La ``diversité'' est donc un facteur de sérendipité. Sans ``diversité'', le réseau de neurones choisit systématiquement le caractère qu'il juge le plus probable entre tous, ce qui donne souvent lieu à des boucles infinies, où la même séquence de caractères revient invariablement, comme si l'IA ``bégayait''.\\
 					
-					Des exemples d'exécution de notre générateur à base de LSTM sont donnés en Annexe \ref{lstm_hugo_ex}. La première chose qui frappe au vu des résultats est la différence entre le peu de structure de l'\textit{input} (de simples caractères, même pas des mots, et encore moins des vers), et la structuration générale de l'\textit{output}, qui ressemble globalement à un poème. Le système a compris seul qu'il fallait régulièrement segmenter les chaînes de caractères avec des espaces pour former des mots, que les mots étaient séparés par de la ponctuation et qu'il fallait retourner à la ligne assez souvent pour former des vers.\\
+					Des exemples d'exécution de notre générateur à base de LSTM sont donnés en Annexe \ref{lstm_hugo_ex}. Nous avons retenu dans l'Annexe le paramétrage du modèle qui donnait la meilleure performance (\textit{loss} la plus faible). Différents de niveaux de diversité ont été testés.\\
 					
-					Outre la structure, le réseau de neurones a généré du contenu. Certes, les mots générés ne sont pas tous des mots du français, mais globalement, leur forme fait sentir qu'ils \textit{pourraient} faire partie de la langue. Chose étonnante à ce sujet, certains mots inventés par le système font curieusement penser à des mots de proto-français ou d'ancien français. Pour ce qui est de la syntaxe, le système semble pouvoir en imiter les rudiments (en particulier si l'on regarde l'ordre des mots). De plus le système semble avoir ``compris'' qu'en moyenne il y a coïncidence entre un unité syntaxique et un vers; ainsi beaucoup de vers produits se terminent par un signe de ponctuation.
-
-			
+					La première chose qui frappe au vu des résultats est la différence entre le peu de structure de l'\textit{input} (de simples caractères, même pas des mots, et encore moins des vers), et la structuration générale de l'\textit{output}, qui ressemble globalement à un poème. Le système a compris seul qu'il fallait régulièrement segmenter les chaînes de caractères avec des espaces pour former des mots, que les mots étaient séparés par de la ponctuation et qu'il fallait retourner à la ligne assez souvent pour former des vers.\\
+					
+					Outre la structure, le réseau de neurones a généré du contenu. Certes, les mots générés ne sont pas tous des mots du français, mais globalement, leur forme fait sentir qu'ils \textit{pourraient} faire partie de la langue. Chose étonnante à ce sujet, certains mots inventés par le système font curieusement penser à des mots de proto-français ou d'ancien français. Ci-dessous, quelques néologisme ``élégants'' ont été recopiés~:
+					\begin{citationbox}
+						\textit{marquisant}\\
+						\textit{ouseaux}\\
+						\textit{étoileau}\\
+						\textit{calpette}\\
+						\textit{hétillée}\\
+						\textit{frazilla}\\
+						\textit{tristercie}\\
+						\textit{comtonnête}\\
+						\textit{gouffresiches}\\
+						\textit{pétilles}\\
+					\end{citationbox}
+					En regardant ces exemples, on pourrait presque croire que le système a de lui même crée des mots-valise (notamment : \textit{comtonnête} qui fait penser à \textit{comte} \textit{honnête} !). L'inventivité lexicale du modèle est donc assez surprenante, et celle-ci va croissant avec le niveau de sérendipité.\\
+					
+					Pour ce qui est de la syntaxe, le système semble pouvoir en imiter les rudiments. En particulier, il semble porter son dévolu sur la coordination et le complément du nom, deux structure extrêmement simples; les compositions impliquant des verbes conjugués sont en revanche délaissées (le système doit mal gérer les dépendances dites \textit{à longue distance}...). De plus le système semble avoir ``compris'' qu'en moyenne il y a coïncidence entre un unité syntaxique et un vers; ainsi beaucoup de vers produits se terminent par un signe de ponctuation.\\
+					
+					Ce petit exemple doit être vu comme une ``preuve de concept'' que les réseau neuronaux sont capables de produire à moindres frais (le code est très court, et relativement simple) des poèmes amusants même si la gestion de la sémantique laisse à désirer.
+					
 		\subsection{Synthèse}
 			Dans cette partie, nous avons pu relier plus précisément les œuvres historiques d'auteurs comme Christopher Strachey, Theo Lutz, Jean-Pierre Balpe et même les surréalistes... rencontrés en Section \ref{genealogie}, avec des concepts mathématiques situés aux fondements de l'informatique moderne, mais aussi avec des méthodes statistiques, plus récentes, vertigineuses par leur simplicité et leur efficacité. Mais dans ce cas, à quel dieu se vouer~? Celui des méthodes formelles et symboliques, ou celui des méthodes statistiques~?\\
 				
@@ -1403,7 +1431,9 @@
 					\end{itemize}
 					Le score F1 est donc un score statistique de similarité, qui compare une fois de plus la production de la machine par rapport à un modèle humain. Dans l'état actuel des choses, nous élevons donc nos robots-poètes selon des lois humaines, et nous les évaluons \textit{a posteriori} selon ces mêmes lois. Cette évaluation est de plus \textit{superficielle}, dans la mesure où elles se fonde sur de simples corrélations statistiques, qui n'ont rien à voir avec une quelconque notion de sémantique, de quelconques règles logiques. Ce type d'apprentissage et ce type d'évaluation des systèmes tendent à lisser le discours des IAs, afin éviter toutes sortes de \textit{bugs}, incluant ceux évoqués plus haut. Mais d'un autre côté, on peut dire que le paradigme de l'imitation est lui-même la cause de la \textit{possibilité} des bugs, car l'aspect superficiel des mesures de similarité empêche la machine de généraliser suivant des règles logiques \textit{strictes} qui s'apparenteraient à nos règles de grammaire. Le modèle semble donc être doublement malsain.\\
 					
-					Nous pensons que cette volonté de conformer les productions de la machine (et non son mode de pensée profond) à un modèle humain vient d'un ``paradigme de l'imitation'' qui est apparu dès les débuts de l'informatique, avec Alan Turing\footnote{nous voyons une certaine ironie dans le fait que le père des méthodes formelles à base de règles (machine de Turing, automates...) ai malgré lui mis en place un paradigme ``aveugle'' typiquement adapté aux méthodes statistiques, qui se basent sur l'entraînement et l'adéquation aux données de référence...}. Turing en effet, est le créateur d'un test encore célèbre et qui porte son nom, le Test de Turing. Ce test, détaillé dans \cite{turing1950} visait à déterminer si oui ou non un ordinateur pouvait être doté d'une sorte de conscience. Le test en question consistait à organiser une conversation entre un expérimentateur et deux interlocuteurs, l'un étant humain, l'autre étant un robot. L'expérimentateur bien sûr, n'a aucun moyen de savoir a priori lequel de ses interlocuteurs est humain, et lequel est non-humain. Sa tache est de déterminer, au travers d'échanges exclusivement textuels, lequel de ses deux interlocuteurs est un robot. Le Test est concluant si à l'issue de la conversation, l'expérimentateur est incapable d'exprimer une quelconque préférence pour l'un ou l'autre de ses interlocuteurs.\\
+					Anaïs Guilet et Franck Soudan notent dans \cite{guilet2017} un glissement très rapide du discours concernant les IAs du champ de la conscience (un ordinateur pense-t-il~?) au champ de la \textit{mimesis} (un ordinateur est-il capable de faire semblant de penser~?). Nous pensons comme ces deux auteurs que la volonté de conformer les productions de la machine (et non son mode de pensée profond) à un modèle humain vient d'un ``paradigme de l'imitation'' qui est apparu dès les débuts de l'informatique, avec Alan Turing\footnote{nous voyons une certaine ironie dans le fait que le père des méthodes formelles à base de règles (machine de Turing, automates...) ai malgré lui mis en place un paradigme ``aveugle'' typiquement adapté aux méthodes statistiques, qui se basent sur l'entraînement et l'adéquation aux données de référence...}. \\
+					
+					Turing en effet, est le créateur d'un test encore célèbre et qui porte son nom, le Test de Turing. Ce test, détaillé dans \cite{turing1950} visait à déterminer si oui ou non un ordinateur pouvait être doté d'une sorte de conscience. Le test en question consistait à organiser une conversation entre un expérimentateur et deux interlocuteurs, l'un étant humain, l'autre étant un robot. L'expérimentateur bien sûr, n'a aucun moyen de savoir a priori lequel de ses interlocuteurs est humain, et lequel est non-humain. Sa tache est de déterminer, au travers d'échanges exclusivement textuels, lequel de ses deux interlocuteurs est un robot. Le Test est concluant si à l'issue de la conversation, l'expérimentateur est incapable d'exprimer une quelconque préférence pour l'un ou l'autre de ses interlocuteurs.\\
 					
 					Nous pensons, comme son créateur, que le Test de Turing est la célébration du ``jeu de l'imitation'' entre l'humain et le robot. Que le Test de Turing est une excellente manière de constater la capacité du robot à émuler les comportements humains. Mais nous pensons aussi que l'imitation ne fait pas tout, et que l'imitation comme standard d'évaluation à produit des robots-poètes capables de \textit{faire comme} mais incapable de \textit{penser comme}, ce qui à terme peut s'avérer gênant. A cet égard, nous renvoyons au passage d'Ada retranscrit en Annexe \ref{ada_test_turing}.\\
 					
@@ -1435,71 +1465,47 @@
 				Ces trois exemples montrent à quel point la créativité des machines et celle des humains peuvent être proches. Ce qui peut à l'heure actuelle nous interroger sur ``qui copie qui'' (cf. par exemple un passage d'\textit{Ada}, en Annexe \ref{ada_mimesis}). Mais aussi, nous faire réfléchir à d'autre moyens d'évaluer et de penser la création littéraire chez les robots.
 
 			\subsubsection{De nouveaux standards}
-				Après avoir constaté que les \textit{bugs} des robots pouvaient être considérés comme des qualités esthétiques chez les auteurs humains, il convient de remettre en question les standards ``mimétiques'' utilisés pour évaluer les performances des générateurs de texte.
-				
-				rhétorique sur la mimesis
-				
-				
-				==> Prisme est un objet informatique composé par Claude Frascadore et Francois Raymond (l'auteur) de cet article, depuis octobre 1985 
-				==> “On fait de la poésie avec des mots et pas avec des idées, aurait dit Mallarmé, et c'est exactement ce que fait Prisme, au sens propre.” francois raymond
+				Après avoir constaté que les \textit{bugs} des robots pouvaient être considérés comme des qualités esthétiques chez les auteurs humains, il convient de remettre en question les standards ``mimétiques'' utilisés pour évaluer les performances des générateurs de texte. Car, comme le dit l'un des personnage du roman \textit{Ada} en parlant de l'IA~:
 				\begin{citationbox}
 					\textit{Rien de bien grave~: ses dialogues sont un peu abrupts, elle abuse des notations temporelles, puise parfois ses mots dans le mauvais registre lexical, mais quel auteur n'a pas ses petites idiosyncrasies~?}
 					\begin{flushright}
 						Antoine Bello, \textit{Ada} \cite{bello2016}
 					\end{flushright}
 				\end{citationbox}
+				Nous pensons qu'il faudrait réussir à créer des modèles génératifs capables de réellement exploiter les idiosyncrasies du robot, et non de les pénaliser systématiquement. En particulier, nous pensons comme Philippe Bootz qu'un réel travail sur le signe (dans son acception saussurienne) peut être mené avec les robots.
 				\begin{citationbox}
-					Cette focalisation sur le signe peut être vue comme une perte, perte des richesses du
+					\textit{Cette focalisation sur le signe peut être vue comme une perte, perte des richesses du
 					texte linguistique -- mais celui-ci reste travaillé par la narration et les formes plus
 					traditionnelles de poésie -- ou comme un gain~: elle oriente la poésie sur le monde sémiotique
-					général et lui donne un nouveau dynamisme. 
+					général et lui donne un nouveau dynamisme. }
+					\begin{flushright}
+						Philippe Bootz, \textit{Poésie numérique : la littérature dépasse-t-elle le
+						texte ?} \cite{bootz2005}
+					\end{flushright}
 					bootz dépasse
 				\end{citationbox}
+				Cela, loin d'éloigner les productions des robots des productions poétiques, pourraient au contraire les recentrer sur un aspect fondamental de la poésie que nous avons évoqué dès notre introduction : le jeu entre signifiant et signifié, et la pluralité des interprétations sémiotiques qui en découlent. L'IA, peut-être plus encore que l'homme qui est formaté par un langage très formalisé et intériorisé, peut par exemple se doter d'une liberté totale concernant son lexique, pourvu qu'on lui évite un contrôle et une optimisation trop normative de ses paramètres. Nous avons pu constater cela dans notre simulation de poèmes ``à la Hugo'', en donnant progressivement du leste à la machine : peu à peu, de nouveaux léxèmes sont apparus, dont certains semblaient même avoir un sens profond... mais encore un fois, tout est question d'interprétation.\\
+				
+				En conclusion, nous pensons que les pistes suivantes, à défaut d'être des directives strictes, pourraient contribuer à la création de véritable robots-poètes~:
+				\begin{itemize}
+					\item agir sur les corpus d'entraînement~: ajouter du bruit dans les données, mélanger les langues, et éventuellement incorporer des productions non-humaines (déjà produites par des IAs), afin d'observer l'émergence de néologismes;
+					\item agir sur les fonctions objectif~: éviter des scores de similarité trop normatifs qui pénalisent les syntagmes trop peu ``humains'', penser à des fonctions de similarité prenant en compte les aspects morphologiques permettant d'orienter intelligememnt les IAs dans leur processus de création lexicale\footnote{le but serait d'éviter les formes complètement inintelligibles comme ``?xgtZ:'', et d'encourager des formes originales comme ``robotéité'', un mélange entre ``robot'' et ``ipséité''...}
+					\item agir sur la façon d'évaluer les performances en phase de test~: au lieu de faire appel à un score impersonnel et purement statistique, pourquoi ne pas demander leur avis aux poètes~? 
+				\end{itemize}
+				
+				
+
+				
+		
 				\begin{citationbox}
-					Pointer sur cette transformation et en faire l'objet même d'un travail
-					de reconfiguration esthétique, tel est le seul propos original de toute
-					entreprise littéraire informatique.
+					\textit{Dans ce registre, la controverse ne tient alors plus sur l'hypothèse d'une I.A. forte, lestant le débat sur les origines de la conscience, mais sur la faculté de mimesis ou plus précisément, l'aptitude à faire diverger un monde en commençant seulement par en imiter les règles.}
 					\begin{flushright}
-						Ambroise Barras, \textit{Prolégomènes à toute littérature informatique} \cite{barras1995}
+						Anaïs Guilet et Franck Soudan, \textit{Robopoïèse} \cite{guilet2017}
 					\end{flushright}
 				\end{citationbox}
-				
-				==> statut de la machine dans tout ca? Malgré son raisonnement scientifique, capable d'une forme de sérendipité selon nous. 
-				accepter le creation des robots comme différente pour cortir du paradigme du bulletin méméto, entrer dans la vraie création
-				changer en conséquence les modèles, par exmeple en évitant de placer les exemples de corpus humains comme aprangons
-			
-		
-		
 	
 		
-		
-		
-		
-		notion de retard dans l'oeuvre d'art : la machine elle, produit instantanément !!! labastie => plus de processus d'écriture
-		
-		labastie : dichotomie art/artisanat produits et temporalités différentes
-		textes produits par les macines : surréalistes (comme cette phrase de lautréamont...)
-		proust : l'ordinateur serait l'écrivain social contre l'écrivain profond
-		
-		
-		guilet souligne le carctère abscond de la, création des ias récentes, qui ne peuvent pas expliquer ce qu'elles font, de meme que leurs programmeurs. Cela dit l'esprit humain lorsuqi'il cree n'stil pas aussi abscons~?
-		guilet souligne le déplacement très rapide (des turing) du discours du champ de la consciencece (un ordinateur pense-t-il~?) au champ de la mimesis (un ordinateur est-il capable de faire semblant de penser~?) c'est le fameux imitation game.
-		\begin{citationbox}
-			\textit{Dans ce registre, la controverse ne tient alors plus sur l'hypothèse d'une I.A. forte, lestant le débat sur les origines de la conscience, mais sur la faculté de mimesis ou plus précisément, l'aptitude à faire diverger un monde en commençant seulement par en imiter les règles.}
-		\end{citationbox}
-		==> ytout le probleme du machine learning actuel purement statistique, c'est de raisonner sur le résultat et les objectif dans le paradogme de la mimesis. On nen veut pas que l'ordinateur devienne auteur, on veut qu'il arrive à imiter l'auteur; et cela se calcule par des scores, des entropies...
-		
-		
-		
-		contre la conscience des algos~: Le générateur automatique simule au plus près la
-		créativité du langage naturel, même si un générateur ne peut pas générer n'importe
-		quoi~: il est bien adapté à la génération de textes qui traitent d'un domaine limité
-		parfaitement descriptible. bootz 2006. echo a ada, qui a une grande asymetrie des connaisances
-		\begin{citationbox}
-			\textit{Ce n'est que lorsque l'informatique change la matérialité du dispositif que l'on peut parler de littérature informatique. Dans ce cas, l'ensemble du dispositif est profondément remis en cause.}\\
-			balpe dispositif
-		\end{citationbox}
-		
+	
 		\newpage
 	\section{Conclusion générale}
 		Nous avons dans ce document cherché à définir la littérature générative en opérant la synthèse entre deux domaines difficilement miscibles~: l'histoire littéraire et l'informatique.\\
@@ -1525,7 +1531,7 @@
 
 
 	\bibliography{bibliography}
-	\bibliographystyle{plain}
+	\bibliographystyle{frplain}
 	\newpage
 	\section{Annexes}
 		\subsection{Pseudo code de l'algorithme \textit{Love Letters} de Christopher Strachey}\label{strachey_code}
@@ -1604,6 +1610,120 @@
 			c'est un bon je suis en vacances et je me permets je suis en vacances et je suis à votre disposition si besoin je suis en train d'être mis à part le petit âne de la journée du vendredi soir à partir du moment que nous puissions vous faire part avant vendredi à la recherche d'un stage en tant mieux pour toi qu'elle est le suivant de Félix et je me permets je vous prie d'agréer Monsieur mes sincères remerciements je suis à votre disposition si besoin est pour le moment là je ne suis plus en détail les deux ne se voit ce weekend et je suis en train d'être mis à part le fait de ne plus de la part avant vendredi 8 je suis à votre disposition si besoin est je pense pas qu'il soit 40 de Félix Faure je suis en vacances à la recherche d'un stage en tant mieux pour toi et je me permets je vous prie d'agréer Monsieur mes sincères remerciements je suis à votre disposition si besoin je suis en train d'être mis à part ça va bien pour vous faire part avant vendredi à la recherche d'un stage en entreprise du bâtiment est apparemment en revanche j'ai une petite question sur la biblio toujours elle a été le premier cela vous intéresse toujours pas de problème je vais dormir à l'hôtel de ville en fin d'après-midi et je suis à votre retour rapide sur la biblio et les autres pays je suis en train d'être mis en ligne sur la joue avec la bébête de Félix et je me permets je suis à votre retour cordialement Adèle Mortier je suis en train d'être mis en ligne et toi ça te dit de ne plus avoir à la recherche d'un stage en entreprise du bâtiment B3 de Félix Faure je suis à votre disposition si besoin est pour le moment je ne sais plus quoi penser je suis en vacances à vous et je suis à votre retour rapide sur
 			\newpage
 		\subsection{Textes ``à la manière de Hugo'' générés par nos soins avec un réseau LSTM}\label{lstm_hugo_ex}
+			\textbf{Graine} : [Le chiffre de mes ans a passé q]``\textbf{uatre vingt, et je n'ai pas de fils, e}''[t je n'ai plus de femme.] (source : \textit{Booz endormi})
+			\subsubsection{Sérendipité faible ($0.2$)}
+				uatre vingt,\\
+				et je n'ai pas de fils, entre et son cheminait le bris sans nombre.\\
+				il faut de l'aigle et le ciel de le pied,\\
+				et le champs au bris de la mort de la vieux pas un chanche et son entier\\
+				le champs au plus que le voille aux bonheurs de l'aigle\\
+				de ce que vous a le pigi?- le point de plus triache,\\
+				aux cieux de la ville a l'air,\\
+				le poigne de la terre et de chevaux parlait\\
+				le peur.\\
+			\subsubsection{Sérendipité moyenne ($0.5$)}
+				uatre vingt,\\
+				et je n'ai pas de fils, en vieux bonquid,\\
+				le comprend a l'équince et de la mère, aux cimierons par les cheval-et\\
+				je ne voyes de comme ses sent dans le seit de vieux parlait\\
+				son poigt du piedre, aux cielstinds sont tendis son oeur-d'ait\\
+				les paros son chevalier de chacun se trange\\
+				de plus scuisse et de prendre a les chevaliers\\
+				criaien, le bruit de sa moi de compre du billos pla.\\
+				ce mon vin aux bois par le plus sans soin de monts de plus,\\
+				et de sargeaux de sa vie et fait cans, ville entier\\
+				qu'à vous a peur, les bans du père de l'ombre,\\
+				et de chaque voix que le soir repland de la grès de sépulcre,\\
+				et la verre, l'air se treme du doin de prisasse;\\
+				et son trible de l'ait à la plaine en vain.\\
+				l'ait le mome de fauverre et d'un boise de la peur.\\
+				ce qu'en la cheval sans que regarder ce que la mer, l'aux commenches sonnait,\\
+				les parcs sur le bruit de le bassert perguez,\\
+				tout le phied marqàille et son chevalier.\\
+				
+				le jour et semble de prend que vous a pour comment\\
+				de plantin de la bien d'en voit de chaque marquisant, pour le monte,\\
+				et de chap sans jose de sa mort le jour,\\
+				tout à ces ouseaux de comprement que les tants princes,\\
+				tout ce que jaissent le vieullait de la mort de la gloie\\
+				de la fin d'un vert de la galle allez en mort.\\
+				ce qu'évaint par le comment de maintent par leurs des enfants.\\
+				le pigi?-ple au peur de sa fouste et, de plus cherre,\\
+				tout pas mon chevale, aux cielieux que vous avec au poind aux grand joue;\\
+				et le voix de la bien tur\\
+				et les pieds de \\
+			\subsubsection{Sérendipité forte ($1.0$)}
+				uatre vingt,\\
+				et je n'ai pas de fils, en fache et des étoileau,\\
+				comtendant dit tout ce qvelle. au soit comperait fait;\\
+				son brisant patitant de rion tue neuteur,\\
+				vous ils.--ces yends des înois ssecques . vonte;\\
+				il se drange criste où fait à cadire,\\
+				noirs sont nieque, il voyait trevait un gelgue un plamain\\
+				aux planges faisaient presqu'au bonneau,\\
+				pleine.--yénant long\\
+				carrèhe;\\
+				l hétillée entièrent calpette et tout à ce bardand\\
+				la trombe et ne de passages aigs, voilà, s'écaédrance,\\
+				a sondit qu'emport pesait le vieille au matin momede;\\
+				et le pind la tête, une évierr'e, et seignerait-il aux plus unttunes pétilles.\\
+				quelqu'un freux émili, merour? cherd de fraver,\\
+				tout consi mechers. loubert les peins d'un ?l! la puissée,\\
+				huaient jémardieur-dus leurs arolles de cheval,\\
+				de moigne, des meurs, que pour il a mabre, équips\\
+				
+				avec le chose, jetait tout sphilloit un seclesait,\\
+				elle poigveinert briller est la vojuve,\\
+				se tendisait, et silent.--les élimmenques,\\
+				son crime, au-deux la, leurs ombre sauler,\\
+				ouvre et du malà, emportait de la borhés\\
+				ce noi pâle, allez, qui tendrin a mondage,\\
+				distinant, sale, esprit l'autant, des résiles, serve et vieiler.\\
+				~\\
+				
+				estint dans le jour et des ants reschechant\\
+				sans quelqu'ins n'avant que tu cas tous mont quand horsait,\\
+				affreux ne monter ils surpadelle est que grandi.\\
+				baher vous a nouble qu'on verd aux gouffresîches\\
+				et le vieillait, il feupe, de fun des murailles,\\
+				et le verre, en tend au dire 'étout un hérimes muse\\
+				autange et de profond \\
+			\subsubsection{Sérendipité très forte ($1.2$)}
+				uatre vingt,\\
+				et je n'ai pas de fils, et ses crijutés,\\
+				juté il s'entend et ne la rale surule qu'ils fonge;\\
+				un cillé son dine. . bassintroinevait énorable\\
+				dé\\
+				s l'empereur que des , comme on voyait sauthes,\\
+				cahnulez y vieullerve, une tharmant, toi, qui fou,\\
+				empartant pluphe, embleurigne du vert remille;\\
+				a pas lah! ce que cherdant voilà, donnerrot\\
+				dans les toubers de couvre ils tristercie.\\
+				--comtonnête et vins de pluyer et, quand poeuve:\\
+				rouleur et frivant toute l'enclamme,le.\\
+				la sauxe ainsi qu'une fon aille aux gleffes et surtsiblers\\
+				et, zénuée un frazilla le trêve en plafée.\\
+				les yeux sont liant mes d'astre, neau-ce noi verreaux!\\
+				gerner que jeunelle, able astinceapant,\\
+				pure levrdiné tumantieil, éclospelleur,\\
+				vois par nonère; sont spletodiez, répépadse.\\
+				faire alleu groupe attopis évaint par leh-voyait\\
+				a les ailes èves un plus patisête commede;\\
+				il astin, de bâte les cobonns conseaanés\\
+				tant ja?-et du vend à si terpler ses gresses qu'on souverait,\\
+				plis passer pasis seras mêle, ignemponfs ceroelossant érèshe,\\
+				
+				il a fère au rogevesil, arrête,\\
+				sa vitale ou de vici mor, ssurccament, et de la bille,\\
+				dégiect toucant les sphig, rongs peurs d'écrosoles;\\
+				dans le pont leur grappant un pauvre un cempretant veux-buchant,\\
+				rendeg crainé de voler regardesaux se tête\\
+				or plus vent ce croho-tinatté que gal; le sestegue et broule!\\
+				
+				elle clisse tout effrayant;\\
+				le forb ressumant toup le geshe s'axpixénito?\\
+				à la vole, latois, cidav\\
+				et le jour atue fer? ù , tue sang au dela co\\
 			\newpage
 		
 		\subsection{Extraits de \textit{Ada} d'Antoine Bello}
