@@ -554,18 +554,31 @@
 				ça a d'extraordinaire~? Au siècle dernier il y avait déjà Victor Hugo.
 				Alors~? 25
 				
-				Calliope encore en marche en 2001
+		
+			\subsubsection{L'ORLANoïde}
+				L'ORLANoïde est un androïde -- ou plutôt une gynoïde -- que nous avons eu l'occasion de ``rencontrer'' durant l'exposition \textit{Artistes et Robots} au Grand Palais \cite{artistes_robots}, exposition pour laquelle l'ORLANoïde avait été spécialement conçue. Comme Calliope, l'ORLANoïde est une œuvre collaborative, qui a réuni une plasticienne ``tech'', ORLAN, et un poète-programmeur, Jean-Pierre Balpe (l'ensemble de la section suivante lui sera aussi consacré). Cette œuvre, en plus d'interroger le statut du langage, aborde le thème du corps et du double.\\
 				
-				
-				Interprétation très libre (messages sybillins...), surréaliste bootz post dada
-				==> Calliope de Couffignal~: choix de mots au hasard et “à la volée” selon des règles grammaticales internes. 
-				==> Couffignal evoque aussi la reproduction de style en ajoutant des règle ad hoc~: pb l'homme prend de plus en plus de place par rapport à la machine, il reste la tête pensante!! bootz
-		\subsection{Littérature générative hypertextuelle}
-			voir papier de riguet, sur la double accpetion de l'hyprtexete p1 2
-			
-			riguet En bref, le numérique fracture une
-			représentation verticale et généalogique de la littérature telle que l’histoire littéraire tendait à la bâtir
-			dans la seconde moitié du XIX e siècle.
+				En effet, l'ORLANoïde, comme son nom l'indique, est un robot fait à l'image de son auteure, du moins pour le buste, couvert de silicone et reproduisant ainsi le visage, les traits et les accessoires d'ORLAN. Le reste du corps est laissé dans son état purement ``fonctionnel'', avec la mécanique apparente, sauf pour le cœur, visible par effet de transparence. L'image du robot se dédouble à l'infini grâce à un jeu de miroirs. Le but pour ORLAN était ainsi de faire de son propre corps ``le lieu du débat public''.\\
+				Car une autre caractéristique de l'ORLANoïde est qu'elle dialogue directement avec son auteure \textit{via} deux télévisions \footnote{et indirectement avec le public, suivant un principe que l'on pourrait qualifier de \textit{double énonciation théâtrale}...}. Le dédoublement est donc total. Et ce dédoublement conduit évidemment à se demander qui est qui, et à qui attribuer les dialogues...
+				\begin{citationbox}
+					\textit{Poursuivant sa démarche artistique sur le corps, l’artiste ORLAN a créé un robot à son image, l’ORLANOÏDE avec lequel elle compte dialoguer en public. Pour cela, elle m’a demandé de créer un générateur de questions que cet avatar pourrait lui poser. Parfois, l’ORLANOÏDE cite ORLAN, bien sûr en majuscules.}\begin{flushleft}
+						Jean-Pierre Balpe, \textit{Site officiel} \cite{balpe_site}
+					\end{flushleft}
+				\end{citationbox}
+				... d'autant plus que ces dialogues sont générés à l'aide d'un algorithme crée par Jean-Pierre Balpe. Selon la communication officielle de l'exposition, le générateur s'appuie sur le \textit{deep learning}, une forme d'apprentissage statistique récente et très performante (comme nous le verrons en Section \ref{neural_net}). Cet algorithme producteur des questions posées par l'ORLANoïde à sa créatrice est librement testable sur la page \href{http://www.balpe.name/Questions-de-l-Orlanoide-a-ORLAN}{http://www.balpe.name/Questions-de-l-Orlanoide-a-ORLAN}. Nous recopions ci-dessous deux des \textit{outputs} que nous avons obtenus~:
+				\begin{citationbox}
+					\textit{Je n'ai pas réellement besoin de ça, de cet ORLANOÏDE. UN TEXTE D’ENGAGEMENT. Qu'est-ce que cela fait d’avoir son double en face de toi ? Avons-nous le même cœur ? L'ORLANOÏDE est distant ? Tu es une mutante, les transformations que tu as opérées sur ton corps ont-elles des conséquences sur ton esprit. CATHÉDRALE DE VERRE. L'océan n'est-il pas à regarder ? RECONSTITUTION.}
+					\begin{flushright}
+						Jean-Pierre Balpe, \textit{Questions de l'ORLANoïde à ORLAN} \cite{balpe_site}
+					\end{flushright}
+				\end{citationbox}
+				\begin{citationbox}
+					\textit{NE SUIS-JE QU'UNE FICTION. Aristote a dit : il n'y a pas de génie sans un grain de folie ; qu’en penses-tu. Tel est le temps pour moi. Avec tous ces hybrides, l’Europe culturelle c'est foutu ? Que peut être cette ORLANOÏDE. N'importe quoi n'est pas perpétuellement n'importe quoi ? M'unir à ORLAN par la moule par les paroles du con ? Dire ce que je suis et ce que je ne suis pas ?}
+					\begin{flushright}
+						Jean-Pierre Balpe, \textit{Questions de l'ORLANoïde à ORLAN} \cite{balpe_site}
+					\end{flushright}
+				\end{citationbox}
+				Nous voyons que l'ORLANoïde s'exprime relativement clairement, avec des phrases syntaxiquement correctes; même si le lien sémantique entre les différentes phrases est parfois obscur \footnote{et pour cause, les modèles statistiques ne connaissent pas de règles sémantiques \textit{a priori}}. Elle semble posséder un genre de culture générale superficielle, ce qui lui permet de citer Aristote et de mentionner l'Europe. Ce genre de phénomène ne peut survenir que lorsque le modèle d'apprentissage est suffisamment complexe (en règle générale, plus le modèle est complexe et ``profond'', plus le degré d'abstraction peut être fort) et le corpus suffisamment riche. Tout cela rapproche l'ORLANoïde de Benjamin, une IA créatrice d'un script de court-métrage dont nous parlerons en Section \ref{fiction_vs_realite}. En effet, ces deux programmes remettent réellement en cause la cohérence de l'auteur. Dans le cas de l'ORLANoïde, cette diffraction s'opère aussi bien théoriquement que techniquement, à travers la matérialité du robot.
 				
 		\subsection{Jean-Pierre Balpe~: ``poète de synthèse''}\label{balpe}
 			Jean-Pierre Balpe est un écrivain et chercheur dans le domaine de la relation entre littérature et informatique. Il a notamment été directeur du département Hypermédia de l'Université Paris VIII entre 1990 et 2005, et Secrétaire Général de la revue \textit{Action Poétique} entre 1974 et 2010. Pendant un temps membres de l'ALAMO, il a aussi activement contribué à la revue informatique \textit{KAOS}. Selon Philippe Bootz~:
@@ -616,6 +629,7 @@
 						\end{flushright}
 					\end{citationbox}
 					Il en effet difficile de savoir qu'est-ce qui, dans la totalité de l'œuvre de Jean-Pierre Balpe, fait ou ne fait pas partie de \textit{La Disparition du Général Proust}, tant les pages sont nombreuses et les miroirs nombreux (par exemple, le site \href{http://sensdelavie.canalblog.com/}{http://sensdelavie.canalblog.com/} qui semble encore être maintenu...). \textit{La Disparition du Général Proust} est une nébuleuse informatique, d'un type qu'ils serait difficile de concevoir hors du média numérique (où la notion de publication, de série, d'édition sont beaucoup plus tranchées~!).\\
+					
 					Quoi qu'il en soit -- hypertextes inter-site ou intra-site -- le trait le plus saillant de cette œuvre numérique est sans doute son organisation non linéaire voire circulaire, jouant des indirections (et même peut être des liens morts, des doublons~!), faisant écho à ces paroles de Jacques-Athanase Gilbert~:
 					\begin{citationbox}
 						\textit{Il est intéressant de mettre en rapport l’obsolescence programmée des technologies avec la volonté de tout conserver et enregistrer. Nous vivons dans une sorte de présentisme anhistorique alors même que nous vivons paradoxalement une époque de patrimonialisation intense.}
@@ -659,58 +673,84 @@
 				\end{citationbox}
 				Les deux générateurs de textes \textit{Proust Memories} (\href{http://proustmemories.canalblog.com/}{http://proustmemories.canalblog.com/}) et \textit{Poèmes Stein} parviennent effectivement à reproduire le ``style'' du romancier français et de la poétesse américaine (\href{http://brooom.org/balpe/photoCadre.html}{http://brooom.org/balpe/photoCadre.html}).\\ 
 				
-				En revanche, les modes de fonctionnement de ces deux générateurs de texte semblent relativement différents. D'un côté, \textit{Proust Memories} semble opérer par \textit{patchworks} de textes issus de \textit{La Recherche}, moyennant l'ajout de quelques mots de liaison. D'un autre côté, \textit{Poèmes Stein} semble produire ses échantillons \textit{ex nihilo}, en partant d'un simple lexique de mots (d'où une correction syntaxique plus faible que dans \textit{Proust memories} -- mais somme toute cela coïncide bien avec le style Gertrude Stein comme on pourra le constater Section \ref{inversion_paradigme}). ``Que ce soit Proust Memories dont le texte est un centon infini ajusté par un algorithme relativement simple jusqu'aux Poèmes Stein (sous leurs diverses formes et, bien entendu, avec quelques traitemenst Steiniens) [...]''. De même que leurs modes de présentation : succession de ``Rêves'' préalablement générés et compilés les uns à la suite des autres (linéairement) dans Proust memories, génération on the fly d'un texte et d'une image de fond à chaque rafraîchissement de page pour Poèmes Stein (selon un principe non linéaire de ``recouvrement''). La première présentation, celle de Proust, se rapproche de la présentation traditionnelle (du moins si l'on compare avec celle des sites web habituels, ou du parchemin...) et brouille donc davantage les pistes sur la nature du discours (``réel'' ou généré ?). La seconde présentation, quoique plus en accord avec le support internet, multimédia et interactif, est moins équivoque dans la mesure où la génération du texte ``se fait sentir'' au moment du clic déclencheur (on imagine facilement le clic appeler un algorithme...). Mais dans tous la cas, la question de l'attribution se pose : comment dire qu'une œuvre littéraire est sans équivoque ``typique de Proust'' ou ``typique de Stein'', quand un algorithme est susceptible de produire des exemples aussi convaincants ?
+				En revanche, les modes de fonctionnement de ces deux générateurs de texte semblent relativement différents. D'un côté, \textit{Proust Memories} semble opérer par \textit{patchworks} de textes issus de \textit{La Recherche}, moyennant l'ajout de quelques mots de liaison. D'un autre côté, \textit{Poèmes Stein} semble produire ses échantillons \textit{ex nihilo}, en partant d'un simple lexique de mots (d'où une correction syntaxique plus faible que dans \textit{Proust memories} -- mais somme toute cela coïncide bien avec le style Gertrude Stein comme on pourra le constater Section \ref{inversion_paradigme}). 
 				
 				\begin{citationbox}
-					Le terme ``esthétique de la frustration'' a été forgé en 1993 [...] C’est Jean Clément qui avait
+				\textit{Que ce soit Proust Memories dont le texte est un centon infini ajusté par un algorithme relativement simple jusqu'aux Poèmes Stein (sous leurs diverses formes et, bien entendu, avec quelques traitemenst Steiniens) [...]}
+					\begin{flushright}
+						Jean-Pierre Balpe, \textit{Mon site personnel} \cite{balpe_blog}
+					\end{flushright}
+				\end{citationbox}
+				
+				En outre, les deux générateurs diffèrent dans leurs modes de présentation. Dans \textit{Proust Memories}, des ``Rêves'' préalablement générés se succèdent et prennent la forme de billets de blog. Nous sommes donc face à une présentation linéaire, relativement traditionnelle puisqu'elle se rapproche de par sa verticalité des sites web habituels mais aussi du \textit{volumen} antique. Cette présentation brouille donc davantage les pistes quant à la nature du discours (``réel'' ou généré ?).\\
+				Les \textit{Poèmes Stein} exploitent beaucoup plus les potentialités du médium informatique; en effet, les poèmes sont générés \textit{on the fly} et portés à l'écran, ils sont aussi accompagnés d'une image de fond qui change à chaque rafraîchissement de la page. Nous sommes donc dans un principe plus moderne de non-linéarité, dans une logique du ``recouvrement'', du palimpseste. A cet égard, Philippe Bootz, reprenant l'expression de Jean Clément, parle d'\textit{esthétique de la frustration}~:
+				\begin{citationbox}
+					\textit{Le terme ``esthétique de la frustration'' a été forgé en 1993 [...] C’est Jean Clément qui avait
 					relevé le caractère frustrant de cette poésie qu’on ne peut relire [...] L’esthétique de
 					la frustration consiste à attribuer, dans le projet d’écriture, une valeur sémiotique à l’activité et
 					aux réactions du lecteur. Autrement dit, à considérer que l’activité de lecture elle-même, dans
-					son aspect béhavioriste, fait partie du texte. 
+					son aspect béhavioriste, fait partie du texte.}
+					\begin{flushright}
+						Philippe Bootz, \textit{Poésie numérique : la littérature dépasse-t-elle le texte ?} \cite{bootz2005}
+					\end{flushright} 
 				\end{citationbox}
 				
 				
-				``Ce qui m’intéresse dans la génération, ce n’est pas le texte qui s’affiche. Ce texte-là est
+				Quoique plus en accord avec le support internet, multimédia et interactif, la présentation des \textit{Poèmes Stein} est certainement moins équivoque que celle de \textit{Proust Memories}, dans la mesure où la génération du texte ``se fait sentir'' au moment du clic déclencheur (on imagine facilement le clic appeler un script...).\\
+				
+				Mais il demeure que dans ces deux cas, la question de l'attribution se pose très clairement : comment dire qu'une œuvre littéraire est sans équivoque ``typique de Proust'' ou ``typique de Stein'', quand un algorithme est susceptible de produire des exemples aussi convaincants ? Jean-Pierre Balpe irait jusqu'à dire que les algorithmes de génération de texte sont -- en puissance -- supérieurs en puissance à l'écrivain~:
+				\begin{citationbox}
+					\textit{Ce qui m’intéresse dans la génération, ce n’est pas le texte qui s’affiche. Ce texte-là est
 				un moment comme un autre, on s’en fout. [...] Ce qui m’intéresse, c’est cette capacité à
 				produire à l’infini et à générer un univers que je ne suis pas capable de faire. C’est donc un
-				autre substitut qui transmet une pensée qui dit. Peut-être est-ce un fantasme d’éternité.''
-				(BALPE, 1994)
+				autre substitut qui transmet une pensée qui dit. Peut-être est-ce un fantasme d’éternité.}
+					\begin{flushright}
+						Jean-Pierre Balpe, \textit{A:{$\backslash$ LITTERATURE $\hookleftarrow$}}\cite{balpebootz1994}
+					\end{flushright}
+				\end{citationbox}
+
 				
-			\subsubsection{Une œuvre générative multimédia}
+			\subsubsection{Une œuvre sérielle, générative et multimédia~: les \textit{Vidéoséries}}
 				\begin{citationbox}
 					\textit{Nous nommerons ``transitoire observable'' la partie de l’œuvre produite par le programme et accessible à la lecture. Le transitoire observable est l’événement multimédia produit par l'exécution du programme et proposé à la lecture.}
 					\begin{flushright}
 						Philippe Bootz, \textit{Les Basiques~: la littérature numérique} \cite{bootz2006}
 					\end{flushright}
 				\end{citationbox}
-				Nous nous penchons ici sur un projet plus récent de Jean-Pierre Balpe, plus ``syncrétique'' également. Il s'agit du projet des ``vidéoséries'' publiées sous le format standard saison-épisode sur la page http://www.balpe.name/-Dedale-des-Videoseries-. Ces vidéoséries semblent en effet répondre à un manque de la littérature ``informatisée'' que Jean-Pierre exprimait en 1994 dans Dispositif : 
-				``L'aspect visuel du texte, largement contraint par les conventions du médium employé, souffre de ne pouvoir exploiter tous les possibles de l'image, puis ceux de l'image en mouvement.''
-				
-				``Le Dédale des Vidéoséries propose un ensemble de courtes vidéos qui, toujours sur la base de la génération automatique de textes, se proposent de travailler sur les rhétoriques du genre : pauvreté des situations, simplification psychologique, répétitions, variations... Mais ceci en utilisant les outils gratuits disponibles dans l'espace Internet et en s'appuyant sur des créations volontairement pauvres.''
-				
-				Ces  viédoséries sont publiées dans des billets de blog, par des identités diverses : Pierre Charlus, Paul Méphisto, Germaine Proust, Sylvester Saint-Loup... compte tenu de ce qui a déjà été dit jusque là sur les travaux Jean-Pierre Balpe, il n'est pas surprenant que ces identités soient fictives.    Chaque identité est associée à un ``photo de profil'' ou plutôt un portrait peint. Les vidéos en elles-mêmes ont un format court (2:30 en moyenne), et allient contenu texte, film et voix-off.
-				Les films de fond sont globalement très contemplatifs : pas de dialogue entre interlocuteurs, et souvent pas d'individu dans le champ de la caméra. Le contenu texte qui vient se calquer au dessus du film st parfois compréhensible, mais souvent totalement flou (lettres entrelacées, qui se chevauchent de façon anarchique...). Faisant écho au texte à l'écran, les voix-off récitent des vers ou des fragments de récit générés par ordinateur sur une voix monocorde, elle aussi générée synthétiquement.
-				
+				Nous nous penchons ici sur un projet plus récent de Jean-Pierre Balpe, plus ``syncrétique'' également. Il s'agit du projet des ``vidéoséries'' publiées sous le format standard saison-épisode sur la page \href{http://www.balpe.name/-Dedale-des-Videoseries-}{http://www.balpe.name/-Dedale-des-Videoseries-}. Ces vidéoséries semblent en effet répondre à un manque de la littérature ``informatisée'' que Jean-Pierre exprimait en 1994 dans \textit{Un roman inachevé -- Dispositifs} : 
 				\begin{citationbox}
-					\textit{S'intéresser aux rapports entre littérature et informatique, ce sera
-					dès lors rendre compte des implications complexes entre texte,
-					machine et programme. Comme nous pouvons déjà le suspecter, il ne sera
-					plus possible de parler de texte de façon autonome~: il n'y aura plus de
-					texte. Il y aura en revanche un système ``texte-programme-machine'',
-					une configuration complexe dont les frontières resteront floues et
-					intriquées.}
+					\textit{L'aspect visuel du texte, largement contraint par les conventions du médium employé, souffre de ne pouvoir exploiter tous les possibles de l'image, puis ceux de l'image en mouvement.}
 					\begin{flushright}
-						Ambroise Barras, \textit{Prolégomènes à toute littérature informatique} \cite{barras1995}
+						Jean-Pierre Balpe, \textit{Un roman inachevé -- Dispositifs} \cite{balpe1994}
 					\end{flushright}
 				\end{citationbox}
+				Voici comment l'auteur lui même présente le projet~:
+				\begin{citationbox}
+					\textit{Le Dédale des Vidéoséries propose un ensemble de courtes vidéos qui, toujours sur la base de la génération automatique de textes, se proposent de travailler sur les rhétoriques du genre : pauvreté des situations, simplification psychologique, répétitions, variations... Mais ceci en utilisant les outils gratuits disponibles dans l'espace Internet et en s'appuyant sur des créations volontairement pauvres.}
+					\begin{flushright}
+						Jean-Pierre Balpe, \textit{Site officiel} \cite{balpe_site}
+					\end{flushright}
+				\end{citationbox}
+				
+				Ces  Vidéoséries sont publiées depuis avril 2018 dans des billets de blog, par des identités diverses : Pierre Charlus, Paul Méphisto, Germaine Proust, Sylvester Saint-Loup (!)... compte tenu de ce qui a déjà été dit jusque là sur les travaux de Jean-Pierre Balpe, il n'est pas surprenant que ces identités soient fictives.    Chaque identité est associée à un ``photo de profil'' ou plutôt un portrait peint. Les vidéos en elles-mêmes ont un format court ($2$ minutes $30$ en moyenne), et allient contenu texte, film et voix-off.\\
+				
+				Les films de fond sont globalement très contemplatifs : pas de situation de dialogue entre interlocuteurs, et souvent pas d'individu dans le champ de la caméra. Le contenu texte qui vient se calquer au dessus du film est parfois compréhensible, mais souvent totalement flou (lettres entrelacées, qui se chevauchent de façon anarchique...). Faisant écho au texte à l'écran, les voix-off débitent des vers ou des fragments de récits générés par ordinateur sur une voix monocorde, elle aussi générée synthétiquement.\\
+				
+				Jean-Pierre dans ce projet récent intègre texte, typographie, animation, vidéo, musique et parole dans un tout cohérent. L'ensemble des médias convoqués vont dans un même sens~: développer une véritable identité du texte généré, lui donner corps. Jean-Pierre Balpe utilise bien ici la rhétorique du ``Transitoire Observable'' introduite par Philippe Bootz. Le projet des Vidéoséries reprend aussi très bien ces propos d'Ambroise Barras~:
 				\begin{citationbox}
 					\textit{un ``texte à
-					l'ordinateur'' n'est pas le substitut, vague et désolant ersatz, d'un ``texte en
-					livre''.}
+						l'ordinateur'' n'est pas le substitut, vague et désolant ersatz, d'un ``texte en
+						livre''.}
 					\begin{flushright}
 						Ambroise Barras, \textit{Prolégomènes à toute littérature informatique} \cite{barras1995}
 					\end{flushright}
 				\end{citationbox}
+%				\begin{citationbox}
+%					\textit{S'intéresser aux rapports entre littérature et informatique, ce sera dès lors rendre compte des implications complexes entre texte, machine et programme. Comme nous pouvons déjà le suspecter, il ne sera plus possible de parler de texte de façon autonome~: il n'y aura plus de texte. Il y aura en revanche un système ``texte-programme-machine'', une configuration complexe dont les frontières resteront floues et intriquées.}
+%					\begin{flushright}
+%						Ambroise Barras, \textit{Prolégomènes à toute littérature informatique} \cite{barras1995}
+%					\end{flushright}
+%				\end{citationbox}
 				
 				
 				
@@ -722,38 +762,19 @@
 				
 				
 				
-				L'écriture hypertextuelle ou l'anti-linéarité
-				``Or, la linéarisation a des conséquences importantes~: elle installe le texte dans une perspective téléologique.'' balpe dispositifs. 
-				Pour Balpe, les deux écueils de la littérature linéaire sont la visée téléologique et la diimension fractale, la seconde étant généralement entraîneé par la première. Dans un roman linéaire, tout doit être dirigé vers une fin, chaque élément doit servir à la conduite de l'intrigue dans l'ordre que l'on attend lui-même fonction des cannons du genre... Point de vue artificiel, convenu, réducteur...Mais qui subsiste dans les récits interactifs (livre dont vous etes le héros). Finaliement, l'ensemble des parcours possibles doivent converger vers un but : la victoire. Ou la fin attendue. Balpe considère que ce genre de mise en forme au lieu d'anéantir la visée téléologique, l'exaspère. Et que de plus elle incite à fractaliser l'intrigue, c'est à dire reproduire la structure et la visée globale du récit dans chacune de ses fragments, suivant une contrainte de localité des effets. Ce la est également vrai pour les personnages, qui doivent par la fractalisation de leur caractère se conformer à une maxime de crédibilité, de vraisemblance et de cohérence.
-				
-				``si l'intentio auctoris est toute entière tendue vers un but, elle se doit de contrôler l'ensemble des possibles ouverts au texte de façon à éviter la moindre déviation de cette flèche qu'elle tire ; l'intentio lectoris ne peut plus intervenir qu'au niveau des marges, c'est-à-dire comme interprétation.'' balpe dispositifs
-				
-				``Paradoxalement, si Yintentio lectoris dispose d'importantes marges de manœuvres, c'est que
-				Vintentio auctoris est faible, et donc, d'une certaine manière, que le texte lu est un texte moins représentatif dans l'échelle implicite de la littérarité.'' balpe dispositifs
-				
-				balpe dispositif 1994 : ``Bien entendu, certains auteurs, contemporains pour l'essentiel, ont essayé d'y échapper, Jacques Roubaud proposant des lectures hypertextuelles de son recueil epsilon 2, Marc Saporta avec Composition I, dans une moindre mesure Julio Cortâzar avec Marelle, mais les pesanteurs du média livre rendent ces lectures hypertextuelles problématiques,''
-				=> on fait de l'hypertexte, mais les moyens physiques ne suivent pas : média non-linéaire et médium linéaire !!!
-				Pour Balpe, ces littératures ``relèvent davantage des curiosa que de modalités réelles~: le lecteur n'est pas suffisamment contraint dans ses pratiques pour ne pas faire fonctionner la lecture de ces ouvrages
-				suivant l'habitus culturalisé''
-				Marelle : roman de l'écrivain argentin Julio Cortázar publié en 1963. Composé de 155 chapitre, ce roman peut se lire de deux façons : soit d'une façon conventionnelle, linéaire, suivent l'ordre croissant des chapitres jusqu'au chapitre 56 ; soit d'une façon non linéaire, en partant du chapitre 73 et en suivant un ordre indiqué au début du livre. Cette lecture s'accorde au contenu surréaliste du livre, qui mêle à l'histoire des articles de journaux, des extraits d'autres livres, et des textes auto-critiques non directement liés à la trame principale. (WIKI)
-				Composition n°1 : roman ``permutationnel'' crée par l'écrivain français Marc Saporta en 1963 et par la suite traduit dans de nombreuses langues (Chinois, Américain). Le roman se présente sous la forme de pages volantes non foliotées que le lecteur est invité à battre comme un jeu de cartes. Les multiples combinaisons possibles changent la chronologie des événements ou situations et par conséquent l'intrigue. Il y aurait donc autant de versions différentes que de lectures. (wikipédia)
-				
-				
-				La horde des contrevents...2004
 				
 			
 				
-				==> avec l'ordinateur~: prose de charles hartman http://oak.conncoll.edu/cohar/Programs.htm et beaucoup d'autres exemples moins connus
-				==> alamo http://www.alamo.free.fr/ + poetes programmeurs (balpe, barbosa)
-				==> mélanger textes artificiels et classiques (balpe)
 				
-				==> Prisme est un objet informatique composé par Claude Frascadore et Francois Raymond (l'auteur) de cet article, depuis octobre 1985 
-				==> “On fait de la poésie avec des mots et pas avec des idées, aurait dit Mallarmé, et c'est exactement ce que fait Prisme, au sens propre.” francois raymond
+
+				
+				
 	
 % Philippe Bootz et Camille Paloques-Bergès, ou les américains Charles Hartman et Christopher Funkhouser guilet
 % nouvelles formes d'expérimentation littéraire comme 5l'animation de texte (1982) et l'hypertexte de fiction (1987) guilet
 
 %hypertexte Jardin aux sentiers qui bifurquent borges bonnet
+		\newpage
 	\section{Aspects techniques de la littérature générative}\label{aspects_tech}
 		De nos jours, la génération de texte s'est élargie et touche beaucoup plus de domaines qu'à ses débuts. De nature purement artistique et expérimentale pour nos poètes programmeurs et autres groupes littéraires d'avant-garde, la génération de texte sert actuellement à créer des résumés synthétiques pour les grandes entreprises \footnote{Yseop par exemple, propose aux entreprises des secteurs de la finance, de la \textit{business intelligence} et du marketing des solutions pour la génération de rapports et de résumés à partir de données de tableur.}, à interagir en temps réel avec des utilisateur ou des consommateurs (\textit{chatbots}) à générer le nom de sa nouvelle marque en fonction des caractéristiques qu que l'on souhaite  mettre en avant \footnote{un service proposé gratuitement par Namelix sur la page \href{https://namelix.com/}{https://namelix.com/}, en plus de générer une typographie} ou même des bulletins météo \footnote{le système le plus ancien à avoir été déployé est le système FoG. Ce système a été utilisé par le Canada pour générer des bulletins météo en français et en anglais au début des années 90 \cite{wiki:fog}.}.\\
 		
@@ -1141,6 +1162,7 @@
 		
 		Chomsky
 		Elements déconcertants + petites analyses de textes naturels et artificiels
+		\newpage
 	\section{Vers une nouvelle définition de la littérature}\label{nouvelle_definition}
 		Dans les sections précédentes, nous avons eu l'occasion de rencontrer des exemples divers de ce que nous avons choisi d'appeler  ``littérature générative''. Nous avons aussi pu voir que leur degré de complexité ont varié~: de la combinatoire, aux réseaux de neurones récurrents, en passant par les modèles à trous, les grammaires génératives etc.
 		Mais nous n'avons pas encore discuté d'un point pourtant crucial dans cette affaire, qui concerne l'ensemble des effets produit par ces littératures et des répercussions possible sur la notion même de littérature. Nous pouvons dégager deux types d'effets~:
@@ -1159,9 +1181,9 @@
 		Nous essaierons de répondre à ces questions en convoquant des exemples déjà mentionnés, mais aussi en nous appuyant sur des fictions récentes traitant elles-mêmes de cette problématique.
 		\subsection{Inquiétante similarité~: la question de l'attribution}
 			Les IAs, toujours plus complexes, arrivent de mieux en mieux à imiter le langage humain en littérature, mais s'appuient aussi de plus en plus sur le \textit{big data}, autrement dit, d'immenses corpus littéraires. Faut-il donc attribuer le succès des IAs à leur seul ``mérite''? Faut-il y voir au contraires les talents du programmeur~? Ou bien, les capacités des IAs sont-elles désormais totalement vides et entièrement volées aux écrivains des corpus littéraires sur lesquels elles s'appuient~?
-			\subsubsection{La capacité des machines à imiter, entre fiction et réalité}
+			\subsubsection{La capacité des machines à imiter, entre fiction et réalité}\label{fiction_vs_realite}
 				Certaines œuvres, en particulier les œuvres contemporaines utilisant des méthodes d'apprentissage statistique sophistiquées et s'appuyant sur de très grands corpus de données, sont aujourd'hui susceptibles de berner un lecteur humain, qui croit lire la production d'un auteur moderne. Nous donnons ici quelques exemples frappants de ``confusion'' (ou à tout le moins, de traitement égal) entre l'authentique et le synthétique.
-				\subsubsubsection{Dans la fiction}
+				\subsubsubsection{Dans la fiction : des capacités fantasmées}
 					Les exemples fictionnels d'IAs réellement ``intelligentes'' sont évidemment très nombreux. Nous comparerons dans cette section l'IA-écrivain Ada du roman éponyme d'Antoine Bello \cite{bello2016} et les androïdes de la série télévisée Westworld de Jonathan Nolan et Lisa Joy.\\
 					
 					La première observation face aux contenus fictionnels que l'on s'est proposé d'aborder, c'est la très forte ressemblance entre les machines et les humains; cette ressemblance est beaucoup plus forte que dans la réalité actuelle. Dans le série \textit{Westworld}, les personnages robotiques sont joués par des humains, donc sont \textit{de facto} physiquement indiscernables par rapport aux humains. Ils s'expriment aussi d'une façon sensiblement identique, usent de métaphores et développent des raisonnements profonds. Dans une scène connue de la série, le responsable informatique (Bernard) qui croit s'entretenir avec une androïde (Dolores) afin de diagnostiquer ses bugs, se retrouve en fait lui-même diagnostiqué par sa patiente, car il se révèle être lui aussi un robot.\\
@@ -1182,7 +1204,7 @@
 					%ada : contrasate entre la production de la machine et celle de franck (les haïkus, simplicité irréductible)
 					%ada : dysfonctionnements lexicaux
 					
-				\subsubsubsection{Dans la réalité}
+				\subsubsubsection{Dans la réalité~: importance de l'intervention humaine}
 					Au travers des exemples réels qui suivent, nous verrons que l'IA est loin d'être aussi avancée que le prétendent les fictions, et par ailleurs que l'auteur (ou plus généralement l'humain) occupe une place de plus en plus ambiguë dans le processus de création. Nous étudierons deux exemples~: celui d'un livre japonais ``écrit'' par un robot (qui fait écho au roman à l'eau de rose écrit par Ada), et celui d'un scénario de film également écrit par une IA.\\
 					
 					En 2016 au Japon, un livre ``écrit'' par une intelligence artificielle a failli remporter un prix littéraire de science-fiction, le \textit{Hoshi Shinichi Literary Award}. Cet auteur robotique, développé par l'équipe d'Hitoshi Masuraba de la Future University d'Hakodate, a réussi à se démarquer des 1450 autres participants (dont 11 autres robots) avec son livre au titre évocateur~: \textit{Le jour où un ordinateur écrit un roman}. Cette performance est d'autant plus remarquable que le jury n'était pas informé de l'origine des textes (humaine ou informatique). Ci-dessous, les dernières lignes du roman en question~:
@@ -1416,6 +1438,10 @@
 				Après avoir constaté que les \textit{bugs} des robots pouvaient être considérés comme des qualités esthétiques chez les auteurs humains, il convient de remettre en question les standards ``mimétiques'' utilisés pour évaluer les performances des générateurs de texte.
 				
 				rhétorique sur la mimesis
+				
+				
+				==> Prisme est un objet informatique composé par Claude Frascadore et Francois Raymond (l'auteur) de cet article, depuis octobre 1985 
+				==> “On fait de la poésie avec des mots et pas avec des idées, aurait dit Mallarmé, et c'est exactement ce que fait Prisme, au sens propre.” francois raymond
 				\begin{citationbox}
 					\textit{Rien de bien grave~: ses dialogues sont un peu abrupts, elle abuse des notations temporelles, puise parfois ses mots dans le mauvais registre lexical, mais quel auteur n'a pas ses petites idiosyncrasies~?}
 					\begin{flushright}
@@ -1474,7 +1500,7 @@
 			balpe dispositif
 		\end{citationbox}
 		
-		
+		\newpage
 	\section{Conclusion générale}
 		Nous avons dans ce document cherché à définir la littérature générative en opérant la synthèse entre deux domaines difficilement miscibles~: l'histoire littéraire et l'informatique.\\
 		L'histoire littéraire d'un côté, nous a permis d'aborder les œuvres d'un point de vue généalogique et de remettre en perspective l'intention des auteurs par rapport à un cadre -- théorique, spatial et bien sûr temporel -- précis. Grâce à cette approche, nous avons pu constater l'évolution progressive des techniques de génération de texte, des systèmes combinatoires finis aux générateurs sémantiques. Nous avons pu évaluer le changement des rapports entre le media et le médium numérique. Nous avons enfin pu réaliser la diversité des profils des auteurs, du poète-programmeur au programmeur-poète.\\
@@ -1494,10 +1520,13 @@
 		
 		
 	!!! ecriture automatique vs ecriture algorithmique : inconscient vs pas de conscience. Ce qui est à l'orogine de l'écriture aléatoire s'en démarque absolument !!!
+	
+	\newpage
 
 
 	\bibliography{bibliography}
 	\bibliographystyle{plain}
+	\newpage
 	\section{Annexes}
 		\subsection{Pseudo code de l'algorithme \textit{Love Letters} de Christopher Strachey}\label{strachey_code}
 			\begin{algorithm}
@@ -1534,13 +1563,11 @@
 					\EndProcedure
 				\end{algorithmic}
 			\end{algorithm}
-			
-			
-			
-			
+			\newpage
 			
 		\subsection{\textit{Proust memories}, Rêve 33386}\label{proust_memories_texte}
 			Chaque fois qu'elle voyait aux autres un avantage si petit fût-il qu'elle n'avait pas, elle se persuadait que c'était non un avantage, mais un mal, et elle les plaignait pour ne pas avoir à les envier il est vrai que au moment où je venais de commettre une faute telle que je m'attendais à être obligé de quitter la maison, mes parents m'accordaient plus que je n'eusse jamais obtenu d'eux comme récompense d'une belle action d'autre part Verdurin n'aurait qu'à m'envoyer un ``bleu'' le matin en sorte que Dumont maintenant se remplissait de sentiments si reconnaissants qu'il se croyait obligé par eux à ne pas avoir l'indiscrétion de l'accepter en même temps toute vie est une somme de fragments aléatoires car même quand elle avait à faire à quelqu'un un cadeau dit utile, quand elle avait à donner un fauteuil, des couverts, une canne, elle les cherchait ``anciens'', comme si leur longue désuétude ayant effacé leur caractère d'utilité, ils paraissaient plutôt disposés pour nous raconter la vie des hommes d'autrefois que pour servir aux besoins de la nôtre de telle sorte qu'à chaque symptôme douloureux mentionné par l'auteur du traité, elle s'écriait. Certes ma grand'tante avait tellement l'habitude de voir toujours en Grévy un même adolescent, qu'elle s'étonnait de le trouver tout à coup moins jeune que l'âge qu'elle continuait à lui donner... Par bonheur mes parents m'appelaient, je sentais que je n'avais pas présentement la tranquillité nécessaire pour poursuivre utilement ma recherche, et qu'il valait mieux n'y plus penser jusqu'à ce que je fusse rentré, et ne pas me fatiguer d'avance sans résultat mais alors dans la réalité, en dehors des cas de sadisme, une fille aurait peut-être des manquements aussi cruels que ceux de Mlle Pupin envers la mémoire et les volontés de son père mort, mais elle ne les résumerait pas expressément en un acte d'un symbolisme aussi rudimentaire et aussi naïf. C'est qu'aussi je ne veux pas dire la grande, madame Connie il est vrai que demain quand je voudrai me lever, bonsoir, plus personne cependant que je monterai sangloter tout en haut de la maison à côté de la salle d'études, sous les toits, dans une petite pièce sentant l'iris, et que parfume aussi un cassis sauvage poussé au dehors entre les pierres de la muraille et qui passe une branche de fleurs par la fenêtre entr'ouverte (enfin, j'avais oublié cet événement pendant mon sommeil, j'en retrouvais le souvenir aussitôt que j'avais réussi à m'éveiller) pour échapper aux mains de mon grand-oncle, mais par mesure de précaution j'entourais complètement ma tête de mon oreiller avant de retourner dans le monde des rêves de plus pourtant ce parfum d'aubépine qui butine le long de la haie où les églantiers le remplaceront bientôt, un bruit de pas sans écho sur le gravier d'une allée, une bulle formée contre une plante aquatique par l'eau de la rivière et qui crève aussitôt, mon exaltation les a portés et a réussi à leur faire traverser tant d'années successives, tandis qu'alentour les chemins se sont effacés et que sont morts ceux qui les foulèrent et le souvenir de ceux qui les foulèrent de même Dumont ne tenait plus sur ses jambes. Certes, nous étions ses préférés, elle avait pour nous, au moins pendant les premières années, autant de considération que ma tante, un goût plus vif, parce que nous ajoutions, au prestige de faire partie de la famille, le charme de n'être pas ses maîtres habituels il est vrai que la difficulté est de vivre quelque chose d'un peu suivi de telle sorte que~: ``je ne peux pas dire comme je trouve que Grévy change, dit ma grand'tante, il est d'un vieux, il est vrai Biche dit que c'est un homme supérieur, un grand cœur et qu'il aurait eu des dispositions extraordinaires pour la musique s'il les avait cultivées''. Tandis que je m'attachais à me rappeler exactement la ligne du toit, la nuance de la pierre qui, sans que je pusse comprendre pourquoi, m'avaient semblé pleines, prêtes à s'entrouvrir, à me livrer ce dont elles n'étaient qu'un couvercle. Cependant êtes-vous seulement connaisseur~? ``cependant Calamity, qu'est-ce que je disais en même temps~?'' maman s'amusait infiniment chaque fois qu'elle prenait Swann en flagrant délit du péché qu'il n'avouait pas, qu'il continuait à appeler le péché sans rémission, le snobisme mais alors Swann n'avait qu'à lui envoyer un ``bleu'', le matin.
+			\newpage
 		\subsection{Une grammaire générative pour \textit{Stochastische Texte} (Theo Lutz)}\label{lutz_grammar}
 			\begin{eqnarray*}
 				S &\rightarrow& S' \ CONJ \ S'\\
@@ -1561,6 +1588,7 @@
 				NM & \rightarrow& Graf, \ Fremde, \ Blick, \ Turm, \ Bauer, \ Weg, \ Gast, \ Tag, \ Tisch, \ Knecht\\
 				NN &\rightarrow& Schloss, \ Bild, \ Auge, \ Dorf, \ Haus\\
 			\end{eqnarray*}
+			\newpage
 		\subsection{Extrait du poème \textit{La Glace sans tain}, issu du recueil \textit{Les Champs Magnétiques} d'André Breton et Philippe Soupault}
 			Prisonniers des gouttes d’eau, nous ne sommes que des animaux perpétuels. Nous courons dans les villes sans bruits et les affiches
 			enchantées ne nous touchent plus. À quoi bon ces grands enthousiasmes
@@ -1571,13 +1599,14 @@
 			pour boire ces boissons fraîches, ces alcools délayés et les tables sont plus
 			poisseuses que ces trottoirs où sont tombées nos ombres mortes de la
 			veille. [...]
+			\newpage
 		\subsection{Un texte généré à partir du ``clavier'' Android}\label{android}
 			c'est un bon je suis en vacances et je me permets je suis en vacances et je suis à votre disposition si besoin je suis en train d'être mis à part le petit âne de la journée du vendredi soir à partir du moment que nous puissions vous faire part avant vendredi à la recherche d'un stage en tant mieux pour toi qu'elle est le suivant de Félix et je me permets je vous prie d'agréer Monsieur mes sincères remerciements je suis à votre disposition si besoin est pour le moment là je ne suis plus en détail les deux ne se voit ce weekend et je suis en train d'être mis à part le fait de ne plus de la part avant vendredi 8 je suis à votre disposition si besoin est je pense pas qu'il soit 40 de Félix Faure je suis en vacances à la recherche d'un stage en tant mieux pour toi et je me permets je vous prie d'agréer Monsieur mes sincères remerciements je suis à votre disposition si besoin je suis en train d'être mis à part ça va bien pour vous faire part avant vendredi à la recherche d'un stage en entreprise du bâtiment est apparemment en revanche j'ai une petite question sur la biblio toujours elle a été le premier cela vous intéresse toujours pas de problème je vais dormir à l'hôtel de ville en fin d'après-midi et je suis à votre retour rapide sur la biblio et les autres pays je suis en train d'être mis en ligne sur la joue avec la bébête de Félix et je me permets je suis à votre retour cordialement Adèle Mortier je suis en train d'être mis en ligne et toi ça te dit de ne plus avoir à la recherche d'un stage en entreprise du bâtiment B3 de Félix Faure je suis à votre disposition si besoin est pour le moment je ne sais plus quoi penser je suis en vacances à vous et je suis à votre retour rapide sur
-
+			\newpage
 		\subsection{Textes ``à la manière de Hugo'' générés par nos soins avec un réseau LSTM}\label{lstm_hugo_ex}
+			\newpage
 		
 		\subsection{Extraits de \textit{Ada} d'Antoine Bello}
-			
 			\subsubsection{Chapitre 3, p.19}\label{ada_elaboration}
 				-- En imitant le processus de création d'un auteur traditionnel. Ada soupèse plusieurs situations de départ tirées des classiques, elle choisit une époque et un cadre pittoresques, puis elle façonne des personnages attachants à partir d'archétypes universels. Elle a commencé par le roman à l'eau de rose, un genre très balisé, idéal pour se faire la main.\\
 				-- A-t-elle déjà produit un texte~?\\
@@ -1654,6 +1683,7 @@
 				fatalement	de	leur	poids.	La	notion	de	source	s'estomperait,	la	production
 				littéraire	deviendrait	une	affaire	collective,	chacun	écrirait	le	journal	qu'il
 				voudrait	lire.
+				\newpage
 		\subsection{Extrait de \textit{La Cantatrice chauve} d'Eugène Ionesco, Scène IV} \label{cantatrice}
 			\begin{center}
 				Mme MARTIN
@@ -1741,6 +1771,7 @@
 			Alors, chère Madame, je crois qu'il n'y a pas de
 			doute, nous nous sommes déjà vus et vous êtes ma
 			propre épouse... Élisabeth, je t'ai retrouvée!
+			\newpage
 		\subsection{\textit{Stanzas in Meditation}, Gertrude Stein, {Stanza VI}}\label{stein_stanza}
 			It is not a range of a mountain\\
 			Of average of a range of a average mountain\\
